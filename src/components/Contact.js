@@ -20,16 +20,15 @@ const Contact = () => {
 
     const form = e.target;
     const data = new FormData(form);
-
     try {
-      const response = await fetch('/test', {
+      const response = await fetch('/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
         },
         body: new URLSearchParams(data).toString(),
       });
-
+console.log(response)
       if (response.ok) {
         alert('Message sent successfully!');
         setFormData({ name: '', email: '', message: '' });
