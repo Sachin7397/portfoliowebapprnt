@@ -15,32 +15,6 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    const form = e.target;
-    const data = new FormData(form);
-
-    try {
-      const response = await fetch('/', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: new URLSearchParams(data).toString(),
-      });
-
-      if (response.ok) {
-        alert('Message sent successfully!');
-        setFormData({ name: '', email: '', message: '' });
-      } else {
-        alert('Failed to send message.');
-      }
-    } catch (error) {
-      alert('An error occurred while sending the message.');
-    }
-  };
-
   return (
     <section id="contact" className="bg-gray-200 text-gray-800 p-8">
       <div className="max-w-2xl mx-auto">
@@ -48,8 +22,7 @@ const Contact = () => {
         <form 
           name="contact" 
           method="POST" 
-          data-netlify="true"
-          onSubmit={handleSubmit} 
+          data-netlify="true" 
           className="space-y-4"
         >
           <input 
@@ -95,6 +68,7 @@ const Contact = () => {
               className="w-full p-2 border border-gray-300 rounded-md"
             ></textarea>
           </div>
+          <div data-netlify-recaptcha="true"></div>
           <button 
             type="submit" 
             className="bg-blue-500 text-white p-3 rounded-md hover:bg-blue-600"
