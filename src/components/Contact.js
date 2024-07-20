@@ -28,7 +28,6 @@ const Contact = () => {
         },
         body: new URLSearchParams(data).toString(),
       });
-console.log(response)
       if (response.ok) {
         alert('Message sent successfully!');
         setFormData({ name: '', email: '', message: '' });
