@@ -22,7 +22,7 @@ const Contact = () => {
     const data = new FormData(form);
 
     try {
-      const response = await fetch('/', {
+      const response = await fetch('/test', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
