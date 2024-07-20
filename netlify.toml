@@ -1,7 +1,18 @@
 [build]
   command = "CI= npm run build"
+  publish = "build"
 
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
+
+[[redirects]]
+  from = "/contact"
+  to = "/contact.html"
+  status = 200
+
+[context.production]
+  command = "CI= npm run build"
+  publish = "build"
+  environment = { NETLIFY_USE_YARN = "true" }
