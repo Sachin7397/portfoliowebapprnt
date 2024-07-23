@@ -9,4 +9,4 @@ It includes various pages
 5)Testimonials
 6)Contact
 
-You can contact me with any of your query which inlcudes your name,emai,message
+You can contact me with any of your query which inlcudes your name,email,message
